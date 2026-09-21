@@ -1,4 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OBO Interactive Concept | Home</title><meta name="description" content="Interactive Online Biz Offers concept"><link rel="stylesheet" href="styles.css"></head><body><div class="announcement">OBO interactive recommendation concept • built around the existing content ecosystem</div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OBO Smart Discovery | Live Demo</title><meta name="description" content="Interactive Online Biz Offers concept"><style>
+:root{
+  --bg:#07111f;
+  --bg-soft:#0d1a2b;
+  --surface:#101f33;
+  --surface-2:#152943;
+  --text:#f7fbff;
+  --muted:#a7b7ca;
+  --line:rgba(255,255,255,.11);
+  --lime:#b7f34a;
+  --cyan:#54d9ff;
+  --violet:#9d7cff;
+  --orange:#ffb057;
+  --danger:#ff7b7b;
+  --shadow:0 28px 80px rgba(0,0,0,.28);
+  --radius:22px;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+  radial-gradient(circle at 15% -10%,rgba(84,217,255,.13),transparent 28rem),
+  radial-gradient(circle at 90% 5%,rgba(157,124,255,.13),transparent 28rem),var(--bg);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+.container{width:min(var(--max),calc(100% - 36px));margin:auto}
+.announcement{background:linear-gradient(90deg,var(--lime),#dbff95);color:#11210a;font-size:.86rem;font-weight:800;text-align:center;padding:9px 16px;letter-spacing:.01em}
+.nav{position:sticky;top:0;z-index:50;background:rgba(7,17,31,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{min-height:74px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;min-width:max-content}
+.brand-mark{width:39px;height:39px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--violet));display:grid;place-items:center;box-shadow:0 10px 32px rgba(84,217,255,.18);font-weight:950;color:#06111f}
+.brand-copy strong{display:block;font-size:.93rem;letter-spacing:.11em}.brand-copy small{display:block;font-size:.66rem;color:var(--muted);letter-spacing:.12em}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{padding:10px 11px;border-radius:10px;color:#dce7f3;font-size:.9rem;font-weight:650;transition:.2s}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,.075);color:#fff}
+.nav-cta{margin-left:8px!important;background:var(--lime)!important;color:#11210a!important;font-weight:850!important}
+.menu-toggle{display:none;margin-left:auto;border:1px solid var(--line);background:transparent;color:white;border-radius:12px;padding:9px 11px}
+.hero{padding:92px 0 64px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#d9f6ff;border:1px solid rgba(84,217,255,.24);background:rgba(84,217,255,.07);border-radius:999px;padding:7px 11px;font-weight:750;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.dot{width:7px;height:7px;border-radius:99px;background:var(--lime);box-shadow:0 0 16px var(--lime)}
+h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.94;letter-spacing:-.055em;margin:20px 0 22px;max-width:940px}
+.gradient-text{background:linear-gradient(90deg,#fff 0%,#9cecff 48%,#bd9dff 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.14rem;color:#b9c9da;max-width:720px;margin:0 0 28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;border-radius:13px;padding:0 18px;border:1px solid var(--line);font-weight:800;transition:.2s;background:rgba(255,255,255,.035);color:white}
+.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.24)}
+.btn-primary{background:var(--lime);color:#12220c;border-color:var(--lime);box-shadow:0 12px 32px rgba(183,243,74,.14)}
+.btn-secondary{background:rgba(84,217,255,.08);border-color:rgba(84,217,255,.22)}
+.hero-note{display:flex;gap:15px;align-items:center;margin-top:30px;color:#92a7bc;font-size:.85rem}.hero-note .avatars{display:flex}.hero-note .avatar{width:27px;height:27px;border:2px solid var(--bg);border-radius:50%;margin-left:-7px;background:linear-gradient(135deg,var(--cyan),var(--violet));display:grid;place-items:center;color:#06111f;font-size:.65rem;font-weight:900}.hero-note .avatar:first-child{margin-left:0}
+.visual-shell{position:relative}.glow{position:absolute;inset:12% 8%;background:linear-gradient(135deg,rgba(84,217,255,.22),rgba(157,124,255,.24));filter:blur(60px);z-index:0}
+.product-card{position:relative;z-index:1;background:linear-gradient(180deg,rgba(20,40,65,.96),rgba(10,24,42,.96));border:1px solid var(--line);border-radius:28px;padding:21px;box-shadow:var(--shadow);overflow:hidden}
+.product-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.pill{padding:7px 10px;border-radius:999px;background:rgba(183,243,74,.1);color:#dffd9e;border:1px solid rgba(183,243,74,.2);font-size:.75rem;font-weight:800}.mini{font-size:.76rem;color:var(--muted)}
+.reco-preview{display:grid;gap:12px}.choice-preview{display:flex;align-items:center;gap:12px;padding:14px;border-radius:15px;background:rgba(255,255,255,.038);border:1px solid var(--line)}.choice-preview strong{font-size:.9rem}.choice-preview small{display:block;color:var(--muted);font-size:.78rem}.choice-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(84,217,255,.12);color:var(--cyan)}.choice-preview.selected{border-color:rgba(183,243,74,.52);background:rgba(183,243,74,.08)}
+.match-card{margin-top:18px;padding:17px;border-radius:16px;background:linear-gradient(135deg,rgba(157,124,255,.13),rgba(84,217,255,.09));border:1px solid rgba(157,124,255,.25)}.match-score{display:flex;justify-content:space-between;font-size:.8rem}.score-track{height:7px;background:rgba(255,255,255,.09);border-radius:99px;overflow:hidden;margin-top:8px}.score-track span{display:block;width:92%;height:100%;background:linear-gradient(90deg,var(--lime),var(--cyan))}
+.logo-strip{padding:20px 0 58px}.strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.micro-stat{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:rgba(255,255,255,.025)}.micro-stat strong{display:block;font-size:1.05rem}.micro-stat span{color:var(--muted);font-size:.78rem}
+section{padding:72px 0}.section-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px}.section-head h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1;letter-spacing:-.04em;margin:0}.section-head p{max-width:580px;color:var(--muted);margin:0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:linear-gradient(180deg,rgba(18,35,57,.88),rgba(11,25,42,.88));border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.22s;box-shadow:0 10px 35px rgba(0,0,0,.12)}.card:hover{transform:translateY(-4px);border-color:rgba(84,217,255,.28)}.card-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(84,217,255,.09);color:var(--cyan);font-size:1.15rem;margin-bottom:20px}.card h3{margin:0 0 9px;font-size:1.08rem}.card p{color:var(--muted);font-size:.9rem;margin:0 0 18px}.card-link{font-size:.85rem;font-weight:800;color:#e1fbff}.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.tag{font-size:.72rem;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.055);color:#bdd0e2}
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.018)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:steps}.step{padding:26px;border:1px solid var(--line);border-radius:20px;position:relative;background:rgba(255,255,255,.023)}.step:before{counter-increment:steps;content:"0" counter(steps);font-weight:900;color:var(--lime);font-size:.75rem;letter-spacing:.08em}.step h3{margin:30px 0 8px}.step p{color:var(--muted);font-size:.9rem}
+.quote{padding:34px;border-radius:26px;background:linear-gradient(135deg,rgba(84,217,255,.08),rgba(157,124,255,.08));border:1px solid var(--line);font-size:1.35rem;letter-spacing:-.02em}.quote small{display:block;font-size:.8rem;color:var(--muted);margin-top:18px}
+.cta-block{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;border:1px solid rgba(183,243,74,.26);background:linear-gradient(135deg,rgba(183,243,74,.09),rgba(84,217,255,.05));padding:34px;border-radius:28px}.cta-block h2{margin:0 0 8px;font-size:2rem}.cta-block p{margin:0;color:var(--muted)}
+.page-hero{padding:70px 0 40px}.page-hero h1{font-size:clamp(2.7rem,6vw,5.2rem);max-width:900px}.page-hero .lead{max-width:800px}
+.filter-bar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}.filter-btn{border:1px solid var(--line);background:rgba(255,255,255,.025);color:#dce8f4;border-radius:999px;padding:9px 12px;font-weight:750;font-size:.82rem}.filter-btn.active{background:var(--lime);color:#10200b;border-color:var(--lime)}
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.resource-card{display:flex;flex-direction:column;min-height:285px}.resource-card .category{font-size:.73rem;color:var(--cyan);font-weight:850;text-transform:uppercase;letter-spacing:.08em}.resource-card h3{font-size:1.14rem;margin:12px 0 8px}.resource-card p{flex:1}.external{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:800;color:white}.external::after{content:"↗";color:var(--lime)}
+.quiz-shell{display:grid;grid-template-columns:310px 1fr;gap:20px;align-items:start}.quiz-side{position:sticky;top:98px}.progress-list{display:grid;gap:10px;margin-top:18px}.progress-item{display:flex;gap:10px;align-items:center;color:#8fa4b8;font-size:.82rem}.progress-item span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);font-weight:850}.progress-item.active{color:white}.progress-item.active span,.progress-item.done span{background:var(--lime);color:#10200b;border-color:var(--lime)}
+.quiz-main{min-height:540px}.quiz-step{display:none}.quiz-step.active{display:block}.quiz-step h2{font-size:2rem;margin:0 0 8px}.quiz-step>p{color:var(--muted);margin:0 0 26px}.option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.option{padding:18px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025);text-align:left;color:white;transition:.2s;min-height:112px}.option:hover,.option.selected{border-color:rgba(183,243,74,.6);background:rgba(183,243,74,.07);transform:translateY(-2px)}.option strong{display:block;margin-bottom:5px}.option small{color:var(--muted);display:block}.quiz-actions{display:flex;justify-content:space-between;margin-top:26px}.quiz-result{display:none}.quiz-result.active{display:block}.result-hero{padding:24px;border-radius:20px;background:linear-gradient(135deg,rgba(183,243,74,.12),rgba(84,217,255,.08));border:1px solid rgba(183,243,74,.27);margin-bottom:16px}.result-score{font-size:.78rem;color:#d7f99c;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.result-hero h2{margin:8px 0;font-size:2.2rem}.result-hero p{color:#bfd0df}.result-actions{display:flex;gap:10px;flex-wrap:wrap}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.insight-list{display:grid;gap:14px}.insight{display:grid;grid-template-columns:160px 1fr auto;gap:18px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}.insight .thumb{height:92px;border-radius:13px;background:linear-gradient(135deg,rgba(84,217,255,.23),rgba(157,124,255,.25));display:grid;place-items:center;font-size:1.7rem}.insight h3{margin:0 0 5px}.insight p{margin:0;color:var(--muted);font-size:.86rem}.insight .meta{font-size:.72rem;color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.service-card{padding:26px}.service-card ul{padding-left:19px;color:#b3c5d7}.service-card li{margin:8px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.story{font-size:1.08rem;color:#c4d2df}.principle{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}.principle:last-child{border-bottom:none}.principle i{width:34px;height:34px;border-radius:12px;background:rgba(183,243,74,.1);display:grid;place-items:center;color:var(--lime);font-style:normal;font-weight:900}.principle strong{display:block}.principle span{color:var(--muted);font-size:.86rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.79rem;color:#c9d8e6;font-weight:750}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#0b192a;color:white;border-radius:13px;padding:13px 14px;outline:none}.field textarea{min-height:135px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(84,217,255,.5);box-shadow:0 0 0 3px rgba(84,217,255,.08)}.form-note{font-size:.75rem;color:#8399ae}.success-box{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:rgba(183,243,74,.09);border:1px solid rgba(183,243,74,.28);color:#dfffa6;font-size:.85rem}.success-box.show{display:block}
+footer{border-top:1px solid var(--line);padding:48px 0 26px;margin-top:74px;background:#06101c}.footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.8fr);gap:30px}.footer-brand p{color:var(--muted);max-width:360px;font-size:.86rem}.footer-col strong{display:block;margin-bottom:12px}.footer-col a{display:block;color:#9eb1c4;font-size:.84rem;margin:8px 0}.footer-col a:hover{color:white}.copyright{border-top:1px solid var(--line);margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;color:#71879c;font-size:.75rem;gap:20px}
+.demo-badge{position:fixed;right:16px;bottom:16px;z-index:40;padding:9px 12px;border-radius:999px;background:#fff;color:#0c1725;font-weight:850;font-size:.72rem;box-shadow:0 10px 35px rgba(0,0,0,.25)}
+@media(max-width:980px){.nav-links{position:absolute;top:74px;left:18px;right:18px;display:none;flex-direction:column;align-items:stretch;background:#0c1b2d;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:var(--shadow)}.nav-links.open{display:flex}.nav-cta{margin-left:0!important}.menu-toggle{display:block}.hero-grid,.about-grid{grid-template-columns:1fr}.visual-shell{max-width:620px}.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3,.resource-grid{grid-template-columns:repeat(2,1fr)}.quiz-shell{grid-template-columns:1fr}.quiz-side{position:static}.progress-list{grid-template-columns:repeat(4,1fr)}.progress-item{display:grid;text-align:center;justify-items:center}.result-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.insight{grid-template-columns:130px 1fr}.insight>.external{grid-column:2}.cta-block{grid-template-columns:1fr}}
+@media(max-width:640px){.container{width:min(100% - 24px,var(--max))}.announcement{font-size:.72rem}.brand-copy small{display:none}.hero{padding-top:66px}.hero-grid{gap:35px}h1{font-size:3.35rem}.section-head{display:block}.section-head p{margin-top:13px}.strip-inner,.grid-4,.grid-3,.resource-grid,.steps,.option-grid,.service-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.quiz-main{min-height:auto}.progress-list{grid-template-columns:repeat(2,1fr)}.insight{grid-template-columns:1fr}.insight .thumb{height:130px}.insight>.external{grid-column:auto}.footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:6px}.demo-badge{right:10px;bottom:10px}.actions .btn{width:100%}.cta-block{padding:24px}.page-hero{padding-top:50px}.result-hero h2{font-size:1.8rem}}
+
+</style></head><body><div class="announcement">OBO interactive recommendation concept • built around the existing content ecosystem</div>
 <nav class="nav"><div class="container nav-inner">
 <a class="brand" href="index.html"><div class="brand-mark">O</div><div class="brand-copy"><strong>ONLINE BIZ OFFERS</strong><small>BUILD • GROW • OPTIMIZE</small></div></a>
 <button class="menu-toggle" aria-label="Toggle menu">☰</button>
@@ -31,4 +109,75 @@
 <div class="footer-col"><strong>Explore</strong><a href="navigator.html">Recommendation Navigator</a><a href="resources.html">Resource Hub</a><a href="insights.html">Latest Insights</a></div>
 <div class="footer-col"><strong>Company</strong><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
 <div class="footer-col"><strong>Live OBO</strong><a target="_blank" rel="noopener" href="https://onlinebizoffers.com/">Current Website ↗</a><a target="_blank" rel="noopener" href="https://store.onlinebizoffers.com/">Digital Store ↗</a><a target="_blank" rel="noopener" href="https://onlinebizoffers.com/blog">Blog ↗</a></div>
-</div><div class="copyright"><div>Concept created for discussion — not the live OBO website.</div><span>All recommendation links point to existing OBO destinations.</span></div></div></footer><div class="demo-badge">Interactive OBO concept</div><script src="app.js"></script></body></html>
+</div><div class="copyright"><div>Concept created for discussion — not the live OBO website.</div><span>All recommendation links point to existing OBO destinations.</span></div></div></footer><div class="demo-badge">Interactive OBO concept</div><script>
+(function(){
+  const path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a=>{if(a.getAttribute('href').toLowerCase()===path)a.classList.add('active')});
+  const menu=document.querySelector('.menu-toggle'), links=document.querySelector('.nav-links');
+  if(menu&&links) menu.addEventListener('click',()=>links.classList.toggle('open'));
+
+  document.querySelectorAll('[data-demo-form]').forEach(form=>{
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      if(!form.checkValidity()){form.reportValidity();return}
+      const box=form.querySelector('.success-box'); if(box) box.classList.add('show');
+      form.reset();
+      try{localStorage.setItem('obo_demo_last_form',new Date().toISOString())}catch(e){}
+    })
+  });
+
+  const filters=document.querySelectorAll('.filter-btn');
+  if(filters.length){
+    filters.forEach(btn=>btn.addEventListener('click',()=>{
+      filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+      const f=btn.dataset.filter;
+      document.querySelectorAll('[data-category]').forEach(card=>{card.style.display=(f==='all'||card.dataset.category===f)?'flex':'none'});
+    }));
+  }
+
+  const q=document.querySelector('[data-quiz]');
+  if(q){
+    let step=1; const answers={};
+    const steps=[...q.querySelectorAll('.quiz-step')];
+    const progress=[...document.querySelectorAll('.progress-item')];
+    const back=q.querySelector('[data-back]'); const next=q.querySelector('[data-next]'); const actions=q.querySelector('.quiz-actions'); const result=q.querySelector('.quiz-result');
+    function paint(){
+      steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===step));
+      progress.forEach((p,i)=>{p.classList.toggle('active',i===step-1);p.classList.toggle('done',i<step-1)});
+      back.style.visibility=step===1?'hidden':'visible'; next.textContent=step===3?'Show my recommendation':'Continue';
+    }
+    q.querySelectorAll('.option').forEach(btn=>btn.addEventListener('click',()=>{
+      const s=btn.closest('.quiz-step'); s.querySelectorAll('.option').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); answers['s'+s.dataset.step]=btn.dataset.value;
+    }));
+    back.addEventListener('click',()=>{if(step>1){step--;paint()}});
+    next.addEventListener('click',()=>{
+      if(!answers['s'+step]){const active=steps.find(s=>Number(s.dataset.step)===step);active.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:260});return}
+      if(step<3){step++;paint();return}
+      showResult();
+    });
+    function showResult(){
+      steps.forEach(s=>s.classList.remove('active')); actions.style.display='none'; progress.forEach(p=>p.classList.add('done')); result.classList.add('active');
+      const goal=answers.s1, stage=answers.s2, style=answers.s3;
+      const map={
+        ai:{title:'AI & Automation Growth Path',desc:'Start with practical AI tools, then move into automation only where it removes repetitive work.',primary:'15 Free Google AI Tools',url:'https://onlinebizoffers.com/free-google-ai-tools',second:'AI Tools & Automation Hub',secondUrl:'https://onlinebizoffers.com/ai-tools-and-automation',store:'Complete AI Business System',storeUrl:'https://store.onlinebizoffers.com/'},
+        traffic:{title:'SEO & Traffic Growth Path',desc:'Build a reliable traffic engine with search-led content, then layer in the right optimization tools.',primary:'YouTube vs. Medium: Which Drives More Traffic?',url:'https://onlinebizoffers.com/youtube-vs-medium-which-drives-more-traffic-to-your-business',second:'SEO & Optimization Tools',secondUrl:'https://onlinebizoffers.com/resources',store:'Growth-focused resources',storeUrl:'https://store.onlinebizoffers.com/'},
+        leads:{title:'Lead Generation & Conversion Path',desc:'Focus first on capturing qualified interest, then improve follow-up and conversion with automation.',primary:'Marketing & Lead Generation Tools',url:'https://onlinebizoffers.com/marketing-and-lead-generation-tools',second:'Email Automation Guide',secondUrl:'https://onlinebizoffers.com/how-to-turn-launch-day-signups-into-paying-customers-with-email-automation',store:'Offer Creation Kit',storeUrl:'https://store.onlinebizoffers.com/product/offer-creation-kit/'},
+        launch:{title:'Launch & Offer Clarity Path',desc:'Clarify the offer, validate demand, then build the simplest launch path around one clear next action.',primary:'How to Start an Online Business',url:'https://onlinebizoffers.com/how-to-start-an-online-business',second:'Start with Zero Budget',secondUrl:'https://onlinebizoffers.com/how-to-build-an-online-business-with-zero-startup-budget',store:'Offer Creation Kit Premium',storeUrl:'https://store.onlinebizoffers.com/product/offer-creation-kit/'}
+      };
+      const r=map[goal]||map.ai;
+      const pace=stage==='starting'?'Beginner-friendly sequence':stage==='growing'?'Growth-stage sequence':'Optimization sequence';
+      const mode=style==='quick'?'Quick wins first':style==='deep'?'Deep-dive guidance':'Tools + implementation';
+      q.querySelector('[data-result-title]').textContent=r.title;
+      q.querySelector('[data-result-desc]').textContent=r.desc;
+      q.querySelector('[data-result-meta]').textContent=`${pace} · ${mode}`;
+      q.querySelector('[data-primary-title]').textContent=r.primary;q.querySelector('[data-primary-link]').href=r.url;
+      q.querySelector('[data-second-title]').textContent=r.second;q.querySelector('[data-second-link]').href=r.secondUrl;
+      q.querySelector('[data-store-title]').textContent=r.store;q.querySelector('[data-store-link]').href=r.storeUrl;
+      try{localStorage.setItem('obo_demo_recommendation',JSON.stringify({...answers,goalTitle:r.title,createdAt:new Date().toISOString()}))}catch(e){}
+    }
+    const restart=q.querySelector('[data-restart]'); if(restart)restart.addEventListener('click',()=>{Object.keys(answers).forEach(k=>delete answers[k]);q.querySelectorAll('.option').forEach(b=>b.classList.remove('selected'));result.classList.remove('active');actions.style.display='flex';step=1;paint()});
+    paint();
+  }
+})();
+
+</script></body></html>
